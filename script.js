@@ -282,6 +282,10 @@ function showView(nextId, options = {}) {
       view.classList.remove("is-active", "is-leaving");
     });
     next.hidden = false;
+    // Cada nova tela começa no topo, inclusive em celulares com rolagem longa.
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
     // Reflow reinicia a animação ao voltar a uma tela.
     void next.offsetWidth;
     next.classList.add("is-active");
