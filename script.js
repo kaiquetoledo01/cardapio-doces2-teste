@@ -593,8 +593,9 @@ function bindEvents() {
 
   $("#order-button").addEventListener("click", () => {
     playBackgroundMusic();
-    showView("view-build-up");
+    showView("view-photo", { afterShow: startIntroSequence });
   });
+  $("#continue-button").addEventListener("click", () => showView("view-build-up"));
   $("#ready-button").addEventListener("click", openQuestion);
   $("#yes-button").addEventListener("click", sayYes);
   $("#no-button").addEventListener("click", moveNoButton);
@@ -615,4 +616,3 @@ function bindEvents() {
 applyConfiguration();
 createBackgroundHearts();
 bindEvents();
-startIntroSequence();
