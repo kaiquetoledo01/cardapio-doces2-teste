@@ -282,6 +282,7 @@ function showView(nextId, options = {}) {
       view.classList.remove("is-active", "is-leaving");
     });
     next.hidden = false;
+    $("#music-toggle").hidden = next.id === "view-menu";
     // Cada nova tela começa no topo, inclusive em celulares com rolagem longa.
     window.scrollTo(0, 0);
     document.documentElement.scrollTop = 0;

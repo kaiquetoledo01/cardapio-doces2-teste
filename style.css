@@ -69,6 +69,10 @@ button:focus-visible {
   backdrop-filter: blur(10px);
 }
 
+.music-toggle[hidden] {
+  display: none;
+}
+
 .music-toggle[aria-pressed="false"] .music-toggle-icon {
   opacity: 0.72;
 }
