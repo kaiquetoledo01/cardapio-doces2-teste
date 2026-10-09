@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#2b101a" />
+
+    <!--
+      PRÉVIA DO WHATSAPP / REDES SOCIAIS
+      Troque título, descrição e imagem pelas versões finais antes de publicar.
+      "og:image" precisa ser uma URL pública e absoluta depois da hospedagem.
+    -->
+    <!-- <title>Cardapio</title> -->
+    <!-- <meta name="description" content="Cardapio" /> -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:title" content="Cardapio" />
+    <!--<meta property="og:description" content="Cardapio" />-->
+    <!-- <meta property="og:image" content="https://seu-dominio.com/assets/og-preview.jpg" /> -->
+    <!-- <meta property="og:image:alt" content="Cardapio" /> -->
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <audio id="background-music" src="assets/Coldplay - The Scientist.mp3" preload="metadata" loop></audio>
+    <button class="music-toggle" id="music-toggle" type="button" aria-label="Desligar música" aria-pressed="true">
+      <span class="music-toggle-icon" id="music-toggle-icon" aria-hidden="true">♫</span>
+    </button>
+    <div class="ambient" aria-hidden="true">
+      <div class="ambient-glow ambient-glow--one"></div>
+      <div class="ambient-glow ambient-glow--two"></div>
+      <div class="heart-field" id="heart-field"></div>
+    </div>
+
+    <main class="experience" id="experience">
+      <section class="view view--menu is-active" id="view-menu" aria-labelledby="menu-title">
+        <div class="menu-shell">
+          <header class="menu-header">
+            <span class="menu-kicker">feito com carinho</span>
+            <h1 id="menu-title">Doces que<br /><em>adoçam o dia</em></h1>
+            <p>Escolha seu favorito — cada pedacinho tem um toque especial. <span aria-hidden="true">♡</span></p>
+          </header>
+          <div class="menu-grid">
+            <article class="menu-card truffle-card">
+              <div class="sweet-art" aria-hidden="true">🍫</div>
+              <div class="menu-card-content">
+                <span class="menu-label">clássicas e irresistíveis</span>
+                <h2>Trufas</h2>
+                <div class="price-row"><strong>Pequena</strong><b>R$ 3,00</b></div>
+                <p>Chocolate ao leite</p>
+                <ul><li>Alpino</li><li>Doce de leite</li><li>Ninho com Alpino</li><li>Prestígio</li><li>Sensação</li><li>Ovomaltine</li></ul>
+                <p class="white-chocolate">Também em chocolate branco: Ninho com Alpino, Prestígio e Sensação.</p>
+                <div class="price-row large-price"><strong>Grande</strong><b>R$ 5,00</b></div>
+                <p>Alpino · Ninho com Alpino · Prestígio · Sensação</p>
+              </div>
+            </article>
+            <article class="menu-card cone-card">
+              <div class="sweet-art cone-art" aria-hidden="true">🍦</div>
+              <div class="menu-card-content">
+                <span class="menu-label">crocante por fora, cremoso por dentro</span>
+                <h2>Cones</h2>
+                <div class="price-row"><strong>Tradicionais</strong><b>R$ 8,00</b></div>
+                <ul><li>Alpino</li><li>Ninho com Alpino</li><li>Prestígio</li><li>Ovomaltine</li></ul>
+                <div class="price-row premium-price"><strong>Especiais</strong><b>R$ 10,00</b></div>
+                <ul><li>Ferrero</li><li>Kinder <span class="new-tag">novidade</span></li><li>Cookies’n Cream <span class="new-tag">novidade</span></li></ul>
+              </div>
+            </article>
+          </div>
+          <footer class="menu-footer">
+            <span>Um docinho para deixar seu dia mais feliz <span aria-hidden="true">♡</span></span>
+            <button class="button button--primary order-button" id="order-button" type="button">Fazer pedido <span aria-hidden="true">♥</span></button>
+          </footer>
+        </div>
+      </section>
+      <!-- Tela 1: a foto é configurada no topo de script.js. -->
+      <section class="view view--photo" id="view-photo" aria-labelledby="photo-title" hidden>
+        <div class="content content--photo">
+          <p class="eyebrow intro-moment intro-dedication is-visible" id="dedication">PARA VOCÊ, MEU AMOR ❤️</p>
+          <div class="photo-wrap intro-moment intro-photo" id="hero-photo-wrap" hidden>
+            <img
+              id="hero-photo"
+              src="assets/foto-casal.jpg"
+              alt="Foto especial do casal"
+            />
+            <div class="photo-placeholder" aria-hidden="true">
+              <span>♡</span>
+              <small>Sua foto favorita aqui</small>
+            </div>
+          </div>
+          <h1 class="intro-moment intro-opening" id="photo-title" hidden>Eu preparei uma coisa especial...</h1>
+          <button class="button button--primary intro-moment intro-continue" id="continue-button" type="button" hidden>
+            Continuar <span aria-hidden="true">❤️</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- Tela 2 -->
+      <section class="view view--build-up" id="view-build-up" aria-labelledby="build-up-title" hidden>
+        <div class="content content--center">
+          <div class="ornament" aria-hidden="true"><span></span>✦<span></span></div>
+          <h2 id="build-up-title" class="reveal-text">
+            Tenho uma coisa muito importante para te perguntar...
+          </h2>
+          <p class="supporting-text">Mas antes... precisa criar coragem. <span>😳❤️</span></p>
+          <button class="button button--primary" id="ready-button" type="button">
+            Estou pronta <span aria-hidden="true">👀</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- Tela 3 -->
+      <section class="view view--question" id="view-question" aria-labelledby="question-title" hidden>
+        <div class="content content--center">
+          <div class="ring-mark" aria-hidden="true">♡</div>
+          <p class="question-intro" id="question-intro">Então preciso saber uma coisa...</p>
+          <h2 id="question-title" class="main-question" aria-live="polite"></h2>
+          <div class="choice-stage" id="choice-stage">
+            <div class="choice-buttons">
+              <button class="button button--yes" id="yes-button" type="button">
+                SIM <span aria-hidden="true">💍❤️</span>
+              </button>
+              <button class="button button--no" id="no-button" type="button">
+                NÃO <span aria-hidden="true">😳</span>
+              </button>
+            </div>
+            <p class="no-hint" id="no-hint" aria-live="polite"></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Resposta SIM -->
+      <section class="view view--answer" id="view-yes" aria-labelledby="yes-title" hidden>
+        <div class="celebration-layer" id="celebration-layer" aria-hidden="true"></div>
+        <div class="content content--answer">
+          <div class="yes-seal" aria-hidden="true">💍</div>
+          <div class="answer-opening answer-stage" id="answer-opening">
+          <p class="eyebrow">A melhor resposta do mundo</p>
+          <h2 id="yes-title">EU SABIA! <span>❤️💍</span></h2>
+          <p class="relationship-counter" id="relationship-counter" aria-live="polite"></p>
+          <p class="chapter-intro">Então agora temos um novo capítulo para escrever juntos. ❤️</p>
+          </div>
+          <p class="letter-intro answer-stage" id="letter-intro">Agora preciso te contar uma coisa...</p>
+          <div class="letter-stage answer-stage" id="letter-stage">
+            <div class="love-letter" id="love-letter"></div>
+            <p class="signature" id="signature"></p>
+            <p class="relationship-date" id="relationship-date"></p>
+          </div>
+
+          <section class="gallery-section answer-stage" id="gallery-stage" aria-labelledby="gallery-title">
+            <h3 id="gallery-title">Alguns dos meus momentos favoritos com você... <span>❤️</span></h3>
+            <div class="gallery" id="gallery" aria-label="Galeria de fotos do casal"></div>
+            <p class="gallery-ending">E ainda temos muitos pela frente.</p>
+            <p class="final-line">Nosso próximo capítulo começa agora. <span>💍❤️</span></p>
+            <p class="final-love" id="final-love">Te amo ❤️</p>
+          </section>
+        </div>
+      </section>
+
+      <!-- Resposta NÃO: mantida como uma escolha real e respeitada. -->
+      <section class="view view--no-answer" id="view-no" aria-labelledby="no-title" hidden>
+        <div class="content content--center">
+          <div class="soft-icon" aria-hidden="true">♡</div>
+          <h2 id="no-title">😳 Tudo bem... eu vou respeitar sua resposta.</h2>
+          <p class="supporting-text">Mas confesso que essa não era a resposta que eu estava esperando. 😂❤️</p>
+          <button class="button button--primary" id="back-button" type="button">
+            Voltar <span aria-hidden="true">❤️</span>
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <div
+      class="photo-preview"
+      id="photo-preview"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Foto ampliada"
+      hidden
+    >
+      <div class="photo-preview-content">
+        <button
+          class="photo-preview-close"
+          id="photo-preview-close"
+          type="button"
+          aria-label="Fechar foto ampliada"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="photo-preview-image-wrap" id="photo-preview-image-wrap">
+          <img id="photo-preview-image" alt="" />
+        </div>
+        <p class="photo-preview-caption" id="photo-preview-caption"></p>
+      </div>
+    </div>
+
+    <noscript>
+      <p class="noscript">Para viver esta surpresa, ative o JavaScript no navegador.</p>
+    </noscript>
+    <script src="script.js"></script>
+  </body>
+</html>
