@@ -710,7 +710,7 @@ h3 {
 }
 
 .gallery-card--spoiler img {
-  filter: blur(3px);
+  filter: blur(8px);
   transform: scale(1.06);
 }
 
